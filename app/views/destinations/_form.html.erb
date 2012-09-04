@@ -1,4 +1,4 @@
-<%= form_for(@destination) do |f| %>
+<%= form_for [@trip, @destination] do |f| %>
   <% if @destination.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@destination.errors.count, "error") %> prohibited this destination from being saved:</h2>

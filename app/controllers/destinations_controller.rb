@@ -24,6 +24,7 @@ class DestinationsController < ApplicationController
   # GET /destinations/new
   # GET /destinations/new.json
   def new
+    @trip = Trip.find(params[:trip_id])
     @destination = Destination.new
 
     respond_to do |format|
@@ -34,13 +35,15 @@ class DestinationsController < ApplicationController
 
   # GET /destinations/1/edit
   def edit
+    @trip = Trip.find(params[:trip_id])
     @destination = Destination.find(params[:id])
   end
 
   # POST /destinations
   # POST /destinations.json
   def create
-    @destination = Destination.new(params[:destination])
+    @trip = Trip.find(params[:trip_id])
+    @destination = @trip.destinations.new(params[:destination])
 
     respond_to do |format|
       if @destination.save

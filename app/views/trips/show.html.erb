@@ -10,6 +10,24 @@
   <%= @trip.description %>
 </p>
 
+<table class="table">
+  <tr>
+    <th>Destination</th>
+    <th>Description</th>
+  </tr>
+
+  <% @trip.destinations.each do |destination| %>
+    <tr>
+      <td><%= link_to destination.name, edit_trip_destination_path(@trip, destination) %></td>
+      <td><%= destination.description %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<p>
+  <%= link_to 'New Destination', new_trip_destination_path(@trip) %>
+</p>
 
 <%= link_to 'Edit', edit_trip_path(@trip) %> |
 <%= link_to 'Back', trips_path %>
