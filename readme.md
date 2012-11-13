@@ -1,6 +1,6 @@
 # Wandrr
 
-This is the sample app built in the [Rails App From Scratch - Part 1] Code TV Screencast. 
+This is the sample app built in the [Rails App From Scratch - Part 1][1] Code TV Screencast. 
 
 If you have questions, hit us up [@codeschool][2] or leave a comment on the screencast!
 
